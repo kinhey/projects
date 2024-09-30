@@ -1,0 +1,17 @@
+name = input("Enter a name: ").capitalize()
+print("\n" + name, "was walking down the..")
+print("\n" + name, "was walking down the", input("Enter a noun"))
+
+print("\n" + name, "was looking ...", "today")
+print("\n" + name, "was looking", input("Enter an adjective"), "today")
+
+print("\n" + name, "likes ...", "down the hill")
+print("\n" + name, "likes", input("Enter a verb"), "down the hill")
+
+print("\n" + "I would like to go to..")
+print("\n" + "I would like to go to", input("Enter a place"))
+
+print("\n" + "My friend is", input("Describe something about a friend of yours (adjective)"))
+
+print("\n" + "One of my favorite hobbies thati is a verb is..")
+print("\n" + "I like", input("Enter a verb"))
