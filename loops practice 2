@@ -1,1 +1,51 @@
+import math
 
+# ------------------------------ #
+print("step 1:")
+# ------------------------------ #
+
+stringList = ["String1", "String2", "String3"]
+for i in stringList:
+    print(i)
+# ------------------------------ #
+print("\nstep 2:")
+# ------------------------------ #
+
+for i in range(1, 11):
+    print(i)
+
+# ------------------------------ #
+print("\nstep 3:")
+# ------------------------------ #
+
+for i in range(-10, 0):
+    print(abs(i))
+    
+# ------------------------------ #
+print("\nstep 4:")
+# ------------------------------ #
+
+numberList = [1,2,3]
+numberSum = 0
+for i in numberList:
+    numberSum += i
+
+print(numberSum)
+
+# ------------------------------ #
+print("\nstep 5:")
+# ------------------------------ #
+
+for i in "Angel":
+    print(i)
+    
+# ------------------------------ #
+print("\nstep 6:")
+# ------------------------------ #
+
+factoredNumber = 3
+finalNumber = 1
+for i in range(1, math.floor(factoredNumber) + 1):
+    finalNumber *= i
+    
+print("Factorial of", math.floor(factoredNumber), "is", finalNumber)
