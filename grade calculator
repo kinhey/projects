@@ -1,0 +1,81 @@
+# A+ = 96-100
+# A = 92-95
+# A- = 90-91
+# B = 89-80
+# C = 79-70
+# F = 69-0
+
+# I chose these ranges above because they were shown in the example in class
+
+# Tests: 70%
+# Homework: 20%
+# Participation: 10%
+
+# Randomizes scores everytime code is ran
+# This code could've been shorter but I like my code styled
+
+import math
+import random
+
+# i added the indexes in the comments to remind myself
+grades = [ 
+    [100, 99, 98, 97, 96], # A+ [index: 0]
+    [95, 94, 93, 92], # A [index: 1]
+    [91, 90], # A- [index: 2]
+    [89, 88, 87, 86, 85, 84, 83, 82, 81, 80], # B [index: 3]
+    [79, 78, 77, 76, 75, 74, 73, 72, 71, 70], # C [index: 4]
+    [] # F [index: 5]
+]
+
+# shortened the function names so it doesn't look ugly in the code
+f = math.floor
+s = str
+r = round
+ri = random.randint
+
+scores = []
+
+tests = []
+homework = []
+participation = ri(0, 100)
+
+finalGrade = ""
+
+for i in range(70):
+    grades[5].append(i)
+
+# inserts the randomized grades into the list
+for i in range(3):
+    tests.insert(i, ri(0, 100))
+    homework.insert(i, ri(0, 100))
+    
+# unnecessary function (only used once) i just wanted to make it look clean
+def getGrade():
+    for i in range(len(grades)):
+        gradeList = grades[i]
+        for v in range(len(gradeList)):
+            gradesNumber = gradeList[v]
+            if f(allScores) == gradesNumber:
+                return (i == 0 and "an A+!" or i == 1 and "an A!" or i == 2 and "an A-!" or i == 3 and "a B!" or i == 4 and "a C!" or i == 5 and "an F!") 
+                # added "an" and "a" to the string to make sure there's no grammatical errors
+                
+def calculateScore(scoreList):
+    scoreSum = 0
+    lenScoreList = len(scoreList)
+    for i in range(lenScoreList):
+        index = scoreList[i]
+        scoreSum += index
+        
+    totalScore = scoreSum/lenScoreList
+    return round(totalScore, 1) # 2nd argument keeps 1 decimal point
+
+scores.append(f(calculateScore(tests) * 0.7)) # 0.7 = 70%
+scores.append(f(calculateScore(homework) * 0.2)) # 0.2 = 20%
+scores.append(f(participation * 0.1)) # 0.1 = 10%
+
+allScores = scores[0] + scores[1] + scores[2]
+finalGrade = getGrade()
+
+print("Your scores are", scores)
+print("Your final score is", r(allScores, 1))
+print("You received", finalGrade)
