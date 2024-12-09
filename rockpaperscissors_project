@@ -1,0 +1,39 @@
+import random
+
+# Fire beats Earth, 
+# Earth beats Water, 
+# Water beats Fire
+
+# Theme: Elements
+
+print("Fire beats Earth,\nEarth beats Water,\nWater beats Fire")
+
+def completeMatch(us, computer):
+    user = us.lower()
+    if (user == computer.lower()):
+        print("\nTied! The CPU also chose " + computer + "!" + "\n")
+    elif (user == "fire" and computer == "Earth") or (user == "earth" and computer == "Water") or (user == "water" and computer == "Fire"):
+        print("\nYou won! CPU chose " + computer + "\n")
+    else:
+        print("\nYou lost! CPU chose " + computer + "!" + "\n")
+
+moves = ["Fire", "Earth", "Water"]
+count = 0
+    
+while True:
+    userInput = input("\nChoose your element (Fire, Water, Earth):\n\n")
+    computerInput = moves[random.randint(0, 2)]
+    
+    for x in moves:
+        if (userInput.lower() != x.lower()):
+            count += 1
+    if (count == 3):
+        count = 0
+        
+        print("Invalid Option")
+        continue
+    
+    count = 0
+    completeMatch(userInput, computerInput)
+    if (input("Play again? y/n") == "n"):
+        break
